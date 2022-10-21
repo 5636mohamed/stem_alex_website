@@ -1,9 +1,96 @@
 /* start global constrains */
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+:root{
+    --primary-color: #00629f;
+    --font-color: #608796;
+    --secondary-color: #003b84;
+    --accessory-color: #ef4040;
+    --back-color: rgb(223, 223, 223);
 }
 
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a{text-decoration: none}
+
 ul{list-style: none}
+
+/* End global constrains */
+
+/* start header  */
+
+.slider{
+    max-height: 720px;
+    overflow: hidden;
+}
+
+.slider .carousel-item::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.slider .carousel-inner .carousel-item .carousel-caption{
+    top: 50%;
+    z-index: 1000000;
+}
+
+/* end header  */
+
+/* start nav  */
+
+nav{
+    z-index: 5;
+    width: 100%;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+nav img{
+    width: 100px;
+    height: 100px;
+}
+
+nav .container ul li a{color: #fff !important; position: relative}
+
+nav .container ul li a:hover{color: #fff;}
+
+nav .container ul li a:before{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+nav .container ul li a:not(nth-of-type(3)):hover::before,
+nav .container ul li a:not(nth-of-type(6)):hover::before{width: 50%;}
+
+nav .container ul li .box{
+    transition: 0.3s
+}
+
+nav .container ul li .box li a svg{transition: 0.3s}
+
+nav .container ul li .box li a:hover svg{color: var(--primary-color)}
+
+nav .container ul li .box li a{color: var(--font-color) !important}
+
+nav .container ul li .box li a:before{background-color: var(--font-color)}
+
+nav .container button{border: 2px #fff solid}
+
+nav .container button:focus{outline: none}
+
+/* end nav */
